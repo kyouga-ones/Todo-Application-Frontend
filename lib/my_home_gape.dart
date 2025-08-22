@@ -10,8 +10,27 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [],
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('Todoアプリ'),
+        title: Row(
+          children: [
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Todoアプリ',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text('Home', style: TextStyle(color: Colors.white)),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text('タスク一覧', style: TextStyle(color: Colors.white)),
+            ),
+          ],
+        ),
       ),
       body: HomeViewModel(),
     );

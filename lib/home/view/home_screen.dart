@@ -6,7 +6,18 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('タスク管理のお手伝いをします'),
+      body: Column(
+        children: [
+          Text(
+            'タスク管理のお手伝いをします',
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            'タスク管理のお手伝いをします',
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }
