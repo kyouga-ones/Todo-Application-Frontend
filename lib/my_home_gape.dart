@@ -1,27 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:todo_application_frontend/home/view_model/home_view_model.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({
+    super.key,
+  });
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text('Todoアプリ'),
       ),
-      body: Column(
-        children: <Widget>[
-          Text('タスク管理のお手伝いをします'),
-        ],
-      ),
+      body: HomeViewModel(),
     );
   }
 }
