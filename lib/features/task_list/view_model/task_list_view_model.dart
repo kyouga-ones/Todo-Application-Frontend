@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_application_frontend/task_list/view/task_list_screen.dart';
+import 'package:todo_application_frontend/features/task_list/view/task_list_screen.dart';
 
 class TaskListViewModel extends StatefulWidget {
   const TaskListViewModel({super.key});

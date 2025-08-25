@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_application_frontend/home/view/home_screen.dart';
+import 'package:todo_application_frontend/features/home/view/home_screen.dart';
 
 class HomeViewModel extends StatefulWidget {
   const HomeViewModel({super.key});

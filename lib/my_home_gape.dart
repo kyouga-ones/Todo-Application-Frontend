@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_application_frontend/core/utils/loading.dart';
-import 'package:todo_application_frontend/home/view_model/home_view_model.dart';
-import 'package:todo_application_frontend/task_list/view_model/task_list_view_model.dart';
+import 'package:todo_application_frontend/features/home/view_model/home_view_model.dart';
+import 'package:todo_application_frontend/features/task_list/view_model/task_list_view_model.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
