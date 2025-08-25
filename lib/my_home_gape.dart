@@ -15,19 +15,47 @@ class MyHomePage extends StatelessWidget {
         title: Row(
           children: [
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => MyHomePage()),
+                );
+              },
               child: Text(
                 'Todoアプリ',
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
             ),
             TextButton(
-              onPressed: () {},
-              child: Text('Home', style: TextStyle(color: Colors.white)),
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => MyHomePage()),
+                );
+              },
+              child: Text(
+                'Home',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
             ),
             TextButton(
-              onPressed: () {},
-              child: Text('タスク一覧', style: TextStyle(color: Colors.white)),
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => MyHomePage()),
+                );
+              },
+              child: Text(
+                'タスク一覧',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
             ),
           ],
         ),
