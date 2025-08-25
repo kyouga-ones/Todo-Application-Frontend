@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:todo_application_frontend/core/utils/loading.dart';
 import 'package:todo_application_frontend/home/view_model/home_view_model.dart';
+import 'package:todo_application_frontend/task_list/view_model/task_list_view_model.dart';
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({
     super.key,
   });
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  Widget screen = HomeViewModel();
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +25,10 @@ class MyHomePage extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => MyHomePage()),
-                );
+                setState(() async {
+                  loading(context, 200);
+                  screen = HomeViewModel();
+                });
               },
               child: Text(
                 'Todoアプリ',
@@ -31,9 +41,10 @@ class MyHomePage extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => MyHomePage()),
-                );
+                setState(() {
+                  loading(context, 200);
+                  screen = HomeViewModel();
+                });
               },
               child: Text(
                 'Home',
@@ -45,9 +56,10 @@ class MyHomePage extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => MyHomePage()),
-                );
+                setState(() {
+                  loading(context, 300);
+                  screen = TaskListViewModel();
+                });
               },
               child: Text(
                 'タスク一覧',
@@ -60,7 +72,7 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: HomeViewModel(),
+      body: screen,
     );
   }
 }
