@@ -25,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             TextButton(
               onPressed: () {
-                setState(() async {
+                setState(() {
                   loading(context, 200);
                   screen = HomeViewModel();
                 });
