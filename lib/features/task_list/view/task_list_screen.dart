@@ -26,6 +26,30 @@ class TaskListScreen extends StatelessWidget {
             ),
             TaskButton(title: '作成'),
             SearchCard(),
+            Card(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text('ID'),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text('概要'),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text('ステータス'),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             TaskListView(taskList: taskList),
           ],
         ),

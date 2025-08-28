@@ -13,10 +13,24 @@ class TaskCard extends StatelessWidget {
     return Card(
       child: Row(
         children: [
-          Text(task.id.toString()),
-          Text(task.summary),
-          Text(task.description),
-          Text(task.status),
+          Expanded(
+            child: Container(
+              alignment: Alignment.center,
+              child: Text(task.id.toString()),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              alignment: Alignment.center,
+              child: Text(task.summary),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              alignment: Alignment.center,
+              child: Text(task.status),
+            ),
+          ),
         ],
       ),
     );
