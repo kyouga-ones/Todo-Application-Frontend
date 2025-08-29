@@ -1,13 +1,13 @@
 class TaskModel {
-  final int id;
-  final String summary;
-  final String description;
-  final String status;
+  final int? id;
+  String summary;
+  String? description;
+  String status;
 
   TaskModel({
-    required this.id,
+    this.id,
     required this.summary,
-    required this.description,
+    this.description,
     required this.status,
   });
 
@@ -16,4 +16,11 @@ class TaskModel {
       summary = json['summary'],
       description = json['description'],
       status = json['status'];
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'summary': summary,
+    'description': description,
+    'status': status,
+  };
 }

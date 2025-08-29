@@ -20,7 +20,10 @@ class SearchCard extends StatelessWidget {
             Gap(gap),
             OverviewColumn(),
             Gap(gap),
-            TaskButton(title: '検索'),
+            TaskButton(
+              title: '検索',
+              onPressed: () {},
+            ),
           ],
         ),
       ),

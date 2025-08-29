@@ -6,10 +6,12 @@ import 'package:todo_application_frontend/features/task_list/widget/task_list_vi
 
 class TaskListScreen extends StatelessWidget {
   final List<TaskModel> taskList;
+  final void Function() onCreatePressed;
 
   const TaskListScreen({
     super.key,
     required this.taskList,
+    required this.onCreatePressed,
   });
 
   @override
@@ -24,7 +26,10 @@ class TaskListScreen extends StatelessWidget {
               'タスク一覧',
               style: TextStyle(),
             ),
-            TaskButton(title: '作成'),
+            TaskButton(
+              title: '作成',
+              onPressed: onCreatePressed,
+            ),
             SearchCard(),
             Card(
               child: Row(
