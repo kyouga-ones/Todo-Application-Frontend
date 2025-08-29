@@ -18,6 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void screenChange() {
     setState(() {
+      loading(context, 200);
       screen = TaskListViewModel(onCreatePressed: onCreatePressed);
     });
   }

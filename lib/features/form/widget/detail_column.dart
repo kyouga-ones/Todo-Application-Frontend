@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class DetailColumn extends StatelessWidget {
-  const DetailColumn({super.key});
+  final String? initialValue;
+  final void Function(String? value) onDetailChanged;
+
+  const DetailColumn({
+    super.key,
+    this.initialValue,
+    required this.onDetailChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +16,9 @@ class DetailColumn extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('詳細'),
-        TextField(
+        TextFormField(
+          initialValue: initialValue,
+          onChanged: onDetailChanged,
           keyboardType: TextInputType.multiline,
           minLines: 10,
           maxLines: null,

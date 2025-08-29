@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:todo_application_frontend/core/model/task_model.dart';
 
 class ButtonsRow extends StatelessWidget {
-  final void Function() onCreatePressed;
+  final TaskModel postData;
+  final void Function(TaskModel) onCreatePressed;
   final void Function() onClosePressed;
 
   const ButtonsRow({
     super.key,
+    required this.postData,
     required this.onCreatePressed,
     required this.onClosePressed,
   });
@@ -23,7 +26,9 @@ class ButtonsRow extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          onPressed: onCreatePressed,
+          onPressed: () {
+            onCreatePressed(postData);
+          },
           child: Text('作成'),
         ),
         Gap(8),
