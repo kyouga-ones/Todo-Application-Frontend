@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_application_frontend/core/utils/loading.dart';
+import 'package:todo_application_frontend/features/form/view_model/form_view_model.dart';
 import 'package:todo_application_frontend/features/home/view_model/home_view_model.dart';
 import 'package:todo_application_frontend/features/task_list/view_model/task_list_view_model.dart';
 
@@ -14,6 +15,20 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Widget screen = HomeViewModel();
+
+  void screenChange() {
+    setState(() {
+      screen = TaskListViewModel(onCreatePressed: onCreatePressed);
+    });
+  }
+
+  void onCreatePressed() {
+    setState(() {
+      screen = FormViewModel(
+        changeScreen: screenChange,
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +73,9 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 setState(() {
                   loading(context, 300);
-                  screen = TaskListViewModel();
+                  screen = TaskListViewModel(
+                    onCreatePressed: onCreatePressed,
+                  );
                 });
               },
               child: Text(
